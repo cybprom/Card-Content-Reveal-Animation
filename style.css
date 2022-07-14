@@ -1,0 +1,90 @@
+body {
+    background: url(SeaRAIDERR.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323', monospace;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.heading {
+    position: absolute;
+    z-index: 2;
+    top: 30px;
+    font-size: 75px;
+    margin-bottom: 30px;
+}
+
+.sub-heading {
+    position: absolute;
+    top: 100px;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 370px;
+    background: url(searaider.jpg) center no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+
+article.card {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* top: 60%; */
+    bottom: -150px;
+    padding: 10px;
+}
+
+.car-description {
+    margin-top: 40px;
+}
+/* .text-wrap {
+    display: inline-block;
+} */
+
+.card::before, 
+.card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(60% + 35px);
+    background-color: #fff;
+    transition: transform .5s .25s ease-in;
+    z-index: -1;
+}
+
+.card::before {
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+    transform: translateY(-100%);
+}
+
+.card::after {
+    bottom: 0;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+    transform: translateY(100%);
+}
+
+.card-content {
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+.card:hover::before, 
+.card:hover::after {
+    transform: translateY(0);
+}
+
+.card:hover .card-content {
+    opacity: 1;
+    transition-delay: .75s;
+}
